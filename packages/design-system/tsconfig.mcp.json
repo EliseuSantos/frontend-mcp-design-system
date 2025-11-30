@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/mcp-server",
+    "rootDir": "./src/mcp-server",
+    "module": "CommonJS",
+    "target": "ES2020",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/mcp-server/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+

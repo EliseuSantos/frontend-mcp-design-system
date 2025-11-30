@@ -1,0 +1,25 @@
+{
+  "name": "frontend-mcp-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "storybook": "turbo storybook --filter=@org/design-system",
+    "storybook:build": "turbo storybook:build --filter=@org/design-system",
+    "mcp:dev": "turbo mcp:dev --filter=@org/design-system",
+    "mcp:build": "turbo mcp:build --filter=@org/design-system",
+    "demo-timeA:dev": "turbo dev --filter=demo-timeA",
+    "demo-timeB:dev": "turbo dev --filter=demo-timeB"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "turbo": "^2.0.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

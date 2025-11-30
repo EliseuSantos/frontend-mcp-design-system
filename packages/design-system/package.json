@@ -1,0 +1,53 @@
+{
+  "name": "@org/design-system",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "concurrently \"storybook dev -p 5173\" \"pnpm mcp:dev\"",
+    "build": "vite build",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build -o storybook-static",
+    "mcp:dev": "LOG_LEVEL=debug tsx src/mcp-server/server.ts",
+    "debug:mcp": "node debug-mcp.js",
+    "mcp:build": "tsc -p tsconfig.mcp.json",
+    "mcp:start": "node dist/mcp-server/server.js",
+    "docker:build": "docker build -t org/design-system-mcp:local -f Dockerfile .",
+    "docker:run": "docker run -p 13316:13316 --env-file .env.production org/design-system-mcp:local"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-links": "^10.1.2",
+    "@storybook/addon-mcp": "^0.1.4",
+    "@storybook/addon-docs": "^10.1.2",
+    "@storybook/react": "^10.1.2",
+    "@storybook/react-vite": "^10.1.2",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "concurrently": "^9.2.1",
+    "express": "^4.19.2",
+    "storybook": "^10.1.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.1",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}
