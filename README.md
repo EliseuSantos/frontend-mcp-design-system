@@ -42,6 +42,10 @@ graph TB
     DS -.-> DS4
 ```
 
+## Architecture decisions
+
+[ADR-001](docs/adr/0001-catalogo-pelo-index-do-storybook.md) records why the MCP server builds its component catalog from Storybook's `index.json` instead of a hand-written list or the component source.
+
 ## 📋 Prerequisites
 
 - **Node.js** 18+ (recommended: 20+)
